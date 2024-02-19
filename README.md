@@ -3,26 +3,22 @@ An attempt to make use of the sram available on Olimex boards ice40hx8k/1k
 
 This whole ordeal started when making some adaption for the ZX81 and Jupiter
 Ace old-timer computer models available for the blackice fpga boards.
-[zx and ace links]
-
 
 I did a port and some alterfications to the Olimex ice40 boards.
-[link]
-
 
 These boards have a nice external 512 kB SRAM handy, I thought, for memory
 expansions.
 
 One thing with these SRAMs is that they function in very much the same
 way as old-fashioned RAMs, such as the 2114 (1kx4), 6116 (2kx8) an 6264 (8kx8) just to mention a few.
-[link]
 
 The modern counterparts are nearly identical except much faster and with more
-capacity.
+capacity. The Olimex sram has some exciting new "UB" and "LB" but they are
+earthed on the board.
 
 One thing that became an obstacle was that I was originally unable to get
 these chips running and I was unable to find some demo code for the Olimex
-boards.
+boards using this SRAM.
 
 What seemed to be the problem was the support for the bidirectional data
 ports still employed on these types of chips.
@@ -36,6 +32,7 @@ buffer, such as the 74hc245 since then the FPGA would only have to support
 regular ins and outs, be it 2x the size of the data bus. It might also have
 impacted the speed
 
+
 Digging deeper into this matter I realized there where at least two pnr
 (place and route) packages available for the yosys, arachne-pnr and next-pnr.
 
@@ -47,7 +44,6 @@ commercial software packages support tristate full out.
 
 Refusing to give up on this I managed to google a possible solution for the
 arachne-pnr where Lattice Primitive "SB_IO" is used directly.
-[link stack overflow]
 
 So I did my first successful tryout making use of the two LEDS on the olimex
 board as my debugger. This code is one part of this repo, "tristatetest.v" and
@@ -67,7 +63,6 @@ and then use the WR signal resting at high and then after setting
 address and data, just pulse the WR low-high. Then to read data one
 needed only to change the address bus, wait some time and then read the
 data bus.
-[salvador link]
 
 So since "linear" code as I understand it is unavailable for verilog real
 time logic I decided to create a really simple state machine for doing
@@ -105,5 +100,15 @@ habit of producing false positives, I also did a simple regression test,
 one of the legs normally going to the data bus of the SRAM would now by made
 to point out into nothing. This can be done by altering the .pcf file and the
 LED2 would kindly light up indicating a "faulty" RAM test.
+
+Here are some links that was very useful that I also mentioned in the text!
+
+https://github.com/lawrie/blackicemx_zx81
+https://www.olimex.com/Products/FPGA/iCE40/iCE40HX8K-EVB/open-source-hardware
+https://www.olimex.com/Products/FPGA/iCE40/iCE40HX1K-EVB/open-source-hardware
+https://hardware.speccy.org/datasheet/2114.pdf
+https://www.olimex.com/Products/_resources/ds_k6r4016v1d_rev40.pdf
+https://stackoverflow.com/questions/60957971/understanding-the-sb-io-primitive-in-lattice-ice40
+https://www.hackster.io/salvador-canas/a-practical-introduction-to-sram-memories-using-an-fpga-ii-a18801
 
 Thats all for now!
