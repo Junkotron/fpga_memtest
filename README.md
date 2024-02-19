@@ -104,6 +104,7 @@ LED2 would kindly light up indicating a "faulty" RAM test.
 Here are some links that was very useful that I also mentioned in the text!
 
 https://github.com/lawrie/blackicemx_zx81
+https://github.com/hoglet67/Ice40JupiterAce
 https://www.olimex.com/Products/FPGA/iCE40/iCE40HX8K-EVB/open-source-hardware
 https://www.olimex.com/Products/FPGA/iCE40/iCE40HX1K-EVB/open-source-hardware
 https://hardware.speccy.org/datasheet/2114.pdf
