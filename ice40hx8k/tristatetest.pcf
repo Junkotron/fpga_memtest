@@ -1,0 +1,23 @@
+# User Constraint File for BlackIcei Mx Acorn Atom (Ice40Atom)
+
+# Onboard 25MHz oscillator
+set_io clk_100mhz J3
+
+# Status led
+set_io led1 M12
+set_io led2 R16
+
+set_io dir C2
+
+set_io test6 E3
+set_io test7 H5
+
+# salae port
+# testch0 C2 # 
+# testch1 F4 # 
+# testch2 D2 # 
+# testch3 G5 # 
+# testch4 D1 # 
+# testch5 G4 # 
+# testch6 E3 # 
+# testch7 H5 # 

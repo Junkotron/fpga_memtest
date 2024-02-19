@@ -1,0 +1,49 @@
+
+set_io clk_100mhz 15
+
+set_io a[0] 79
+set_io a[1] 80
+set_io a[2] 81
+set_io a[3] 82
+set_io a[4] 83
+set_io a[5] 85
+set_io a[6] 86
+set_io a[7] 87
+set_io a[8] 89
+set_io a[9] 90
+set_io a[10] 91
+set_io a[11] 93
+set_io a[12] 94
+set_io a[13] 95
+set_io a[14] 96
+set_io a[15] 97
+set_io a[16] 99
+set_io a[17] 100
+
+set_io d[0] 62
+set_io d[1] 63
+set_io d[2] 64
+set_io d[3] 65
+set_io d[4] 66
+set_io d[5] 68
+set_io d[6] 69
+set_io d[7] 71
+
+set_io cs_n 78
+set_io oe_n 74
+set_io we_n 73
+
+set_io led1 40
+set_io led2 51
+
+set_io test[0] 8
+set_io test[1] 9
+set_io test[2] 10
+set_io test[3] 12
+set_io test[4] 13
+set_io test[5] 16
+set_io test[6] 18
+set_io test[7] 19
+
+set_io sr1 20 # pin 31 on 34-pin connector
+set_io sr2 21 # pin 33 on 34-pin connector
